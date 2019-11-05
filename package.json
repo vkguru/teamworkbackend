@@ -4,9 +4,7 @@
   "description": "Teamwork is an internal social network for employees of an organization. The goal of this application is to facilitate more interaction between colleagues and promote team bonding.",
   "main": "server.js",
   "scripts": {
-    "test": "jasmine-node spec",
-    "test:coveralls": "istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-    "lint": "eslint"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -20,15 +18,11 @@
   "homepage": "https://github.com/vkguru/teamworkbackend#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "istanbul": "^0.4.5",
-    "jasmine": "^3.5.0",
-    "request": "^2.88.0"
+    "jasmine": "^3.5.0"
   },
   "devDependencies": {
-    "coveralls": "^3.0.7",
     "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "jasmine-node": "^3.0.0"
+    "eslint-plugin-import": "^2.18.2"
   }
 }
