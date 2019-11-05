@@ -9,4 +9,8 @@ npm:
   - 6.9.0
 
 script:
+  - npm run lint
   - npm run test:coveralls
+
+notification:
+  email: false
