@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/vkguru/teamworkbackend#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "istanbul": "^0.4.5",
     "jasmine": "^3.5.0",
+    "pg": "^7.12.1",
     "request": "^2.88.0"
   },
   "devDependencies": {
