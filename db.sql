@@ -16,30 +16,25 @@ CREATE TABLE articles (
     aid BIGSERIAL NOT NULL PRIMARY KEY,
     title VARCHAR(300) NOT NULL,
     body VARCHAR,
-    employee_id INT,
     author_id INT,
     date_created TIMESTAMP,
-    FOREIGN KEY (author_id) REFERENCES employees (id)
+    FOREIGN KEY (author_id) REFERENCES employees (eid)
 );
 
 
 CREATE TABLE gifs (
     gid BIGSERIAL NOT NULL PRIMARY KEY,
-    employee_id  INT REFERENCES employees(eid),
-    author VARCHAR UNIQUE author REFERENCES employees(username),
+    gif VARCHAR(30) NOT NULL,
+    author_id INT,
     date_created TIMESTAMP,
-    share_gif INT[] DEFAULT ARRAY[]::INT[],
-    share INT DEFAULT 0
+    FOREIGN KEY (author_id) REFERENCES employees (eid)
 );
 
 CREATE TABLE comments (
     cid BIGSERIAL NOT NULL PRIMARY KEY,
     comment VARCHAR(300),
-    employee_id  INT REFERENCES employees(eid),
-    author VARCHAR UNIQUE author REFERENCES employees(username),
-    article_id INT REFERENCES articles(aid),
-    gif_id INT REFERENCES gif(gid),
+    gif_id INT REFERENCES gifs(gid),
+    author_id INT,
     date_created TIMESTAMP,
-    share_post INT[] DEFAULT ARRAY[]::INT[],
-    share INT DEFAULT 0
+    FOREIGN KEY (author_id) REFERENCES employees (eid)
 );
